@@ -1,0 +1,22 @@
+01:20:43 **** Build of configuration Release for project Test_func.c ****
+make all 
+Building file: ../Func_tester.c
+Invoking: Cross GCC Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Func_tester.d" -MT"Func_tester.d" -o "Func_tester.o" "../Func_tester.c"
+../Func_tester.c: In function ‘main’:
+../Func_tester.c:65:6: warning: unused variable ‘x2’ [-Wunused-variable]
+  int x2=7;
+      ^
+../Func_tester.c:64:6: warning: unused variable ‘x1’ [-Wunused-variable]
+  int x1=50;
+      ^
+Finished building: ../Func_tester.c
+ 
+Building target: Test_func.c
+Invoking: Cross GCC Linker
+gcc  -o "Test_func.c"  ./Func_tester.o   
+Finished building target: Test_func.c
+ 
+
+01:20:43 Build Finished (took 214ms)
+

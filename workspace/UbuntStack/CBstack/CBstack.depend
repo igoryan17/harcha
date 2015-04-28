@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1429904649 source:/home/nikita/workspace/CBstack/CBtester.c
+	"Stack.h"
+	<stdlib.h>
+	<stdio.h>
+
+1429905049 /home/nikita/workspace/CBstack/Stack.h
+
+1429884991 source:/home/nikita/workspace/CBstack/Implem.c
+	"Stack.h"
+	<stdlib.h>
+

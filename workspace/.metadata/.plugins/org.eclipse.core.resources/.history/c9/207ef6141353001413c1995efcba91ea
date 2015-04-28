@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+struct stack {
+	char value;
+	struct stack* next;
+} * head ;
+
+
+void push(char c){ 			//запихать
+	struct stack* temp = malloc(sizeof (struct stack) );
+	(*temp).value = c;
+	temp->next = head;
+	head = temp;
+}
+
+char pop (){ 				//извлечь верхний
+	if (head == NULL)
+			return '-';
+	struct stack* tmp = head;
+	char temp = head->value;
+	head = head->next;
+	free(tmp);
+	return temp;
+	}
+
+int calc(char* str_in)
+{
+int x1, x2, result, n, i;
+char c;
+
+for( i=0; i<n; i++)
+{
+	c = str_in[i];
+	if( isdigit( c) ) {
+	push(c);
+}
+	else
+	{
+	x1 = pop();
+	x2 = pop();
+		switch(c)
+		{
+		case '+' : result = x1 + x2;
+		break;
+		case '-' : result = x1 - x2;
+		break;
+		case '*' : result = x1 * x2;
+		break;
+		case '/' : result = x1 / x2;
+		break;
+		default : printf("error: unidentified symbol\n");
+		break;
+		}
+	}
+}
+return pop();
+}
+int main(void) {
+	head = NULL;
+	push('7');
+	push('3');
+	push('*');
+	push('5');
+	push('-');
+	push('8');
+	push('/');
+	printf("%c \n", pop());
+	printf("%c \n", pop());
+	printf("%c \n", pop());
+	printf("%c \n", pop());
+	printf("%c \n", pop());
+	printf("%c \n", pop());
+	printf("%c \n", pop());
+	return 0;
+
+}
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+01:20:41 **** Build of configuration Release for project 6okt ****
+make all 
+Building file: ../src/6okt.c
+Invoking: Cross GCC Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/6okt.d" -MT"src/6okt.d" -o "src/6okt.o" "../src/6okt.c"
+Finished building: ../src/6okt.c
+ 
+Building target: 6okt
+Invoking: Cross GCC Linker
+gcc  -o "6okt"  ./src/6okt.o   
+Finished building target: 6okt
+ 
+
+01:20:41 Build Finished (took 254ms)
+

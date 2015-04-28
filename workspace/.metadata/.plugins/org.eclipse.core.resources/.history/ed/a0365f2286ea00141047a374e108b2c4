@@ -1,0 +1,27 @@
+/*
+ * Stack.h
+ *
+ *  Created on: 24 апр. 2015 г.
+ *      Author: nikita
+ */
+
+#ifndef STACK_H
+#define STACK_H
+
+typedef int data_t;
+
+#define STACK_SIZE 1000
+
+typedef struct{
+        data_t* DATA;
+        elemen_t data[STK_SZ];
+        int count; // top element number
+        unsigned int STACK_SIZE;
+        data_t* head; // point to int (includes adress of parametr)
+} Stack ;
+
+int             push    (Stack* s, data_t D);//push a new element onto the top of the stack
+data_t          pop     (Stack* s);//remove and return the element at the top of the stack.
+data_t          top     (Stack* s);//Returns the element currently at the top of the stack, or null if the stack is empty.
+
+#endif // STACK_H

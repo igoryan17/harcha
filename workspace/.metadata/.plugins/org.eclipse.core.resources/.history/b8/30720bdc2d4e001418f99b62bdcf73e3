@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <assert.h>
+
+
+int main ()
+{
+	int i;
+	key_t c;
+	void* q;
+
+
+	c = ftok (NULL, 316 );
+	i = shmget (c,20,IPC_CREAT);
+
+	q = shmat(i,NULL,0);
+	strcpy(q, "Narkomany\n");
+	printf ("Narkoman chto li?\n");
+}

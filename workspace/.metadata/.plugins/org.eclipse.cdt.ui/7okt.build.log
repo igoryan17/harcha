@@ -1,0 +1,36 @@
+01:20:41 **** Build of configuration Release for project 7okt ****
+make all 
+Building file: ../7okt.c
+Invoking: Cross GCC Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"7okt.d" -MT"7okt.d" -o "7okt.o" "../7okt.c"
+Finished building: ../7okt.c
+ 
+Building file: ../7okt_2.c
+Invoking: Cross GCC Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"7okt_2.d" -MT"7okt_2.d" -o "7okt_2.o" "../7okt_2.c"
+../7okt_2.c: In function ‘main’:
+../7okt_2.c:20:4: warning: format ‘%d’ expects argument of type ‘int *’, but argument 2 has type ‘int’ [-Wformat=]
+    scanf ("%d", arr[i]);
+    ^
+../7okt_2.c:14:12: warning: unused variable ‘k’ [-Wunused-variable]
+  int i, j, k;
+            ^
+../7okt_2.c:14:9: warning: unused variable ‘j’ [-Wunused-variable]
+  int i, j, k;
+         ^
+../7okt_2.c:20:10: warning: ignoring return value of ‘scanf’, declared with attribute warn_unused_result [-Wunused-result]
+    scanf ("%d", arr[i]);
+          ^
+Finished building: ../7okt_2.c
+ 
+Building target: 7okt
+Invoking: Cross GCC Linker
+gcc  -o "7okt"  ./7okt.o ./7okt_2.o   
+./7okt_2.o: In function `main':
+7okt_2.c:(.text.startup+0x0): multiple definition of `main'
+./7okt.o:7okt.c:(.text.startup+0x0): first defined here
+collect2: error: ld returned 1 exit status
+make: *** [7okt] Ошибка 1
+
+01:20:42 Build Finished (took 261ms)
+

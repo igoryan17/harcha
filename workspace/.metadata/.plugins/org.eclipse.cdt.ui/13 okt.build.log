@@ -1,0 +1,111 @@
+20:47:49 **** Build of configuration Release for project 13 okt ****
+make all 
+Building file: ../13okt.c
+Invoking: Cross GCC Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"13okt.d" -MT"13okt.d" -o "13okt.o" "../13okt.c"
+../13okt.c: In function ‘calc’:
+../13okt.c:84:1: warning: ‘result’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ return pop(result);
+ ^
+Finished building: ../13okt.c
+ 
+Building file: ../Calc.c
+Invoking: Cross GCC Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"Calc.d" -MT"Calc.d" -o "Calc.o" "../Calc.c"
+../Calc.c: In function ‘calc’:
+../Calc.c:93:9: warning: unused variable ‘k’ [-Wunused-variable]
+ int  p, k, l, flag = 1;
+         ^
+../Calc.c:92:24: warning: unused variable ‘j’ [-Wunused-variable]
+ int v1, v2, result, i, j;
+                        ^
+../Calc.c: In function ‘operation’:
+../Calc.c:86:4: warning: ‘result’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+    return result;
+    ^
+../Calc.c: In function ‘calc’:
+../Calc.c:136:1: warning: ‘result’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ return pop(result);
+ ^
+Finished building: ../Calc.c
+ 
+Building file: ../alpha_test.c
+Invoking: Cross GCC Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"alpha_test.d" -MT"alpha_test.d" -o "alpha_test.o" "../alpha_test.c"
+../alpha_test.c: In function ‘main’:
+../alpha_test.c:19:6: warning: unused variable ‘x2’ [-Wunused-variable]
+  int x2=7;
+      ^
+../alpha_test.c:18:6: warning: unused variable ‘x1’ [-Wunused-variable]
+  int x1=50;
+      ^
+Finished building: ../alpha_test.c
+ 
+Building file: ../dig_calc.c
+Invoking: Cross GCC Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"dig_calc.d" -MT"dig_calc.d" -o "dig_calc.o" "../dig_calc.c"
+../dig_calc.c: In function ‘calc’:
+../dig_calc.c:73:15: warning: unused variable ‘l’ [-Wunused-variable]
+  int c, m, k, l;
+               ^
+../dig_calc.c:73:12: warning: unused variable ‘k’ [-Wunused-variable]
+  int c, m, k, l;
+            ^
+../dig_calc.c:73:9: warning: unused variable ‘m’ [-Wunused-variable]
+  int c, m, k, l;
+         ^
+../dig_calc.c:98:1: warning: ‘result’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+ return pop(result);
+ ^
+../dig_calc.c:91:10: warning: ‘result’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+Finished building: ../dig_calc.c
+ 
+Building target: 13 okt
+Invoking: Cross GCC Linker
+gcc  -o "13 okt"  ./13okt.o ./Calc.o ./alpha_test.o ./dig_calc.o   
+   result = operation(c, v1, v2) + '0';
+          ^
+./Calc.o: In function `push':
+Calc.c:(.text+0x0): multiple definition of `push'
+./13okt.o:13okt.c:(.text+0x0): first defined here
+./Calc.o: In function `pop':
+Calc.c:(.text+0x50): multiple definition of `pop'
+./13okt.o:13okt.c:(.text+0x50): first defined here
+./Calc.o: In function `power':
+Calc.c:(.text+0xb0): multiple definition of `power'
+./13okt.o:13okt.c:(.text+0xb0): first defined here
+./Calc.o: In function `calc':
+Calc.c:(.text+0x480): multiple definition of `calc'
+./13okt.o:13okt.c:(.text+0xd0): first defined here
+./Calc.o: In function `main':
+Calc.c:(.text.startup+0x0): multiple definition of `main'
+./13okt.o:13okt.c:(.text.startup+0x0): first defined here
+./alpha_test.o: In function `sign':
+alpha_test.c:(.text+0x0): multiple definition of `sign'
+./Calc.o:Calc.c:(.text+0x210): first defined here
+./alpha_test.o: In function `main':
+alpha_test.c:(.text.startup+0x0): multiple definition of `main'
+./13okt.o:13okt.c:(.text.startup+0x0): first defined here
+./dig_calc.o: In function `push':
+dig_calc.c:(.text+0x0): multiple definition of `push'
+./13okt.o:13okt.c:(.text+0x0): first defined here
+./dig_calc.o: In function `pop':
+dig_calc.c:(.text+0x50): multiple definition of `pop'
+./13okt.o:13okt.c:(.text+0x50): first defined here
+./dig_calc.o: In function `power':
+dig_calc.c:(.text+0xb0): multiple definition of `power'
+./13okt.o:13okt.c:(.text+0xb0): first defined here
+./dig_calc.o: In function `operation':
+dig_calc.c:(.text+0xd0): multiple definition of `operation'
+./Calc.o:Calc.c:(.text+0x240): first defined here
+./dig_calc.o: In function `calc':
+dig_calc.c:(.text+0x190): multiple definition of `calc'
+./13okt.o:13okt.c:(.text+0xd0): first defined here
+./dig_calc.o: In function `main':
+dig_calc.c:(.text.startup+0x0): multiple definition of `main'
+./13okt.o:13okt.c:(.text.startup+0x0): first defined here
+collect2: error: ld returned 1 exit status
+make: *** [13 okt] Ошибка 1
+
+20:47:50 Build Finished (took 1s.10ms)
+

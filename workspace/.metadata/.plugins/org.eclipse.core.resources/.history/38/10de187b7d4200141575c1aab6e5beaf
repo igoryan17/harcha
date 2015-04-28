@@ -1,0 +1,11 @@
+/*
+ * main.c
+ *
+ *  Created on: 22 сент. 2014 г.
+ *      Author: nikita
+ */
+#include <stdio.h>
+int main () {
+	printf ("hello, world");
+	return 0;
+}

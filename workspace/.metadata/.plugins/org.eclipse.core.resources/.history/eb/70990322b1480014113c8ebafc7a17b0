@@ -1,0 +1,50 @@
+/*
+ * 30sept_file.c
+ *
+ *  Created on: 30.09.2014
+ *      Author: nikita
+ */
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/wait.h>
+#include <fcntl.h>
+#include <assert.h>
+int main(int argc, char *argv[])
+{
+	int pipefd[2];
+	pipe(pipefd);
+	pid_t my_pid = fork();
+	char buf[1024];
+
+if (my_pid > 0) { //parent
+	close(pipefd[0]);
+	unsigned i;
+	size_t len;
+	for (i=1; i < argc; i++){
+		len = strlen(argv[i]);
+	write(pipefd[1], &len, sizeof(len));
+	write(pipefd[1], argv[i], len);
+	len = 0;
+	write(pipefd[1], len, sizeof(len));
+	}
+				}
+
+else	{ //child
+
+close(pipefd[1]);
+size_t len;
+
+read(pipefd[0], &len, sizeof(len));
+read(pipefd[0], argv[i], len);
+buf[len]=0;
+		}
+	return 0;
+}
+
+
+
+
+
+

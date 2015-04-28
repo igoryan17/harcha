@@ -1,0 +1,25 @@
+01:20:40 **** Build of configuration Release for project 30sept.c ****
+make all 
+Building file: ../30sept_file.c
+Invoking: Cross GCC Compiler
+gcc -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"30sept_file.d" -MT"30sept_file.d" -o "30sept_file.o" "../30sept_file.c"
+../30sept_file.c: In function ‘main’:
+../30sept_file.c:44:25: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
+                    write(STDOUT_FILENO, &buf, 1);
+                         ^
+../30sept_file.c:46:21: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
+                write(STDOUT_FILENO, "\n", 1);
+                     ^
+../30sept_file.c:52:21: warning: ignoring return value of ‘write’, declared with attribute warn_unused_result [-Wunused-result]
+                write(pipefd[1], argv[1], strlen(argv[1]));
+                     ^
+Finished building: ../30sept_file.c
+ 
+Building target: 30sept.c
+Invoking: Cross GCC Linker
+gcc  -o "30sept.c"  ./30sept_file.o   
+Finished building target: 30sept.c
+ 
+
+01:20:40 Build Finished (took 153ms)
+

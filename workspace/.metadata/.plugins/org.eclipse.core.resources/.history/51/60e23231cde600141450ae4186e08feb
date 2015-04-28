@@ -1,0 +1,31 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 01.04.2015
+ *      Author: nikita
+ */
+#include <iostream>
+#include <string>
+class Dick
+{
+public:
+	Dick(){}
+	Dick(std::string h): dick(h) {}
+	void print(){std::cout << dick << std::endl;}
+	~Dick(){}
+protected:
+	std::string am;
+private:
+	std::string dick;
+};
+
+//class Sobol : public
+
+int main()
+{
+	Dick chlen("Harichking");
+	chlen.print();
+
+	std::cout << chlen.am << std::endl;
+	return 0;
+}

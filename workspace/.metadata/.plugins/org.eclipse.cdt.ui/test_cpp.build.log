@@ -1,0 +1,15 @@
+00:13:49 **** Incremental Build of configuration Release for project test_cpp ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.cpp"
+Finished building: ../main.cpp
+ 
+Building target: test_cpp
+Invoking: GCC C++ Linker
+g++  -o "test_cpp"  ./main.o   
+Finished building target: test_cpp
+ 
+
+00:13:49 Build Finished (took 411ms)
+

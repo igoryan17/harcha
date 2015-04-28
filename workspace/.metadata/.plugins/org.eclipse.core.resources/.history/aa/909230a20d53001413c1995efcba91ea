@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+struct stack {
+	char value;
+	struct stack* next;
+} * head ;
+
+
+void push(char c){ 			//запихать
+	struct stack* temp = malloc(sizeof (struct stack) );
+	(*temp).value = c;
+	temp->next = head;
+	head = temp;
+}
+
+char pop (){ 				//извлечь верхний
+	if (head == NULL)
+			return '-';
+	struct stack* tmp = head;
+	char temp = head->value;
+	head = head->next;
+	free(tmp);
+	return temp;
+	}
+
+int calc;
+
+
+int main(void) {
+	head = NULL;
+	push('7');
+	push('3');
+	push('*');
+	push('5');
+	printf("%c \n", pop());
+	printf("%c \n", pop());
+	printf("%c \n", pop());
+	printf("%c \n", pop());
+	printf("%c \n", pop());
+	printf("%c \n", pop());
+	return 0;
+
+}

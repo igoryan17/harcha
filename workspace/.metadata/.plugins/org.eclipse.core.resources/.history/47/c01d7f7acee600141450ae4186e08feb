@@ -1,0 +1,38 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 01.04.2015
+ *      Author: nikita
+ */
+#include <iostream>
+#include <string>
+class Dick
+{
+public:
+	Dick(){std::cout<<"Dick()\n";}
+	Dick(std::string h): dick(h) {}
+	void print(){std::cout << dick << std::endl;}
+	int sum(int x, int y){return x+y;}
+	double sum(double x, double y){return x+y;}
+	~Dick(){}
+protected:
+	std::string am;
+private:
+	std::string dick;
+};
+
+class Sobol : public Dick
+{
+public:
+	void bombom(){std::cout<<"Fuck off please!\n";}
+};
+
+int main()
+{
+	Dick chlen("Harichking");
+	chlen.print();
+	Sobol grisha;
+	grisha.bombom();
+	std::cout << chlen.sum(4,4.5) << std::endl;
+	return 0;
+}

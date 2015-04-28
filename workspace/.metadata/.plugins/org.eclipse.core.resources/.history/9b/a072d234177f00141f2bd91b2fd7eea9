@@ -1,0 +1,10 @@
+
+#include <sys/types.h>          /* See NOTES */
+#include <sys/socket.h>
+
+int main (){
+
+	int s = socket(int AF_INET, int  SOCK_STREAM, int 0);
+	struct sockaddr
+
+}

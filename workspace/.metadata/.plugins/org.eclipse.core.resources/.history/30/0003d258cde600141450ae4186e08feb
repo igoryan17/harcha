@@ -1,0 +1,34 @@
+/*
+ * main.cpp
+ *
+ *  Created on: 01.04.2015
+ *      Author: nikita
+ */
+#include <iostream>
+#include <string>
+class Dick
+{
+public:
+	Dick(){}
+	Dick(std::string h): dick(h) {}
+	void print(){std::cout << dick << std::endl;}
+	~Dick(){}
+protected:
+	std::string am;
+private:
+	std::string dick;
+};
+
+class Sobol : public Dick
+{
+	void bombom(){std::cout<<"Fuck off please!\n";}
+};
+
+int main()
+{
+	Dick chlen("Harichking");
+	chlen.print();
+	Sobol grisha;
+	std::cout << grisha.am << std::endl;
+	return 0;
+}
